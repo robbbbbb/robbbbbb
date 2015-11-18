@@ -11,8 +11,13 @@ body {
 }
 
 a, a:link, a:visited, a:active {
+	font-size: 20px;
 	text-decoration: none;
 	color: rgba(255, 255, 255, 255);
+}
+
+@media(max-width: 640px) {
+	a { font-size: 3vw; }
 }
 
 a:hover {
