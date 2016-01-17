@@ -1,0 +1,45 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+    background-color: rgba(255, 255, 255, 255);
+    color: rgba(255, 255, 255, 255);
+    font-family: monospace;
+}
+
+a, a:link, a:visited, a:active {
+	font-size: 20px;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 255);
+}
+
+@media(max-width: 640px) {
+	a { font-size: 3vw; }
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+div {
+	margin: auto;
+	margin-top: 0px;
+	text-align: center;
+	width: 90%;
+}
+
+img {
+	width: 100%;
+    max-width: 1024px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
