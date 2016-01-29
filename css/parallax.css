@@ -77,3 +77,46 @@ body {
 	text-align: center;
 	font-size: 25px;
 }
+
+/* arcane galaxies section */
+
+#arcane-galaxies {
+	height: 525px;
+}
+
+#arcane-galaxies img {
+	display: block;
+	position: absolute;
+}
+
+#spaceship {
+	max-width: 500px;
+	min-width: 250px;
+	top: 0px;
+	right: 0px;
+}
+
+#silhouettes {
+	height: 250px;
+	top: 250px;
+	left: 0px;
+}
+
+#agblurb {
+	height: 200px;
+	top: 50px;
+	left: 150px;
+}
+
+/* footer */
+#footer {
+	height: 125px;
+}
+
+#footer #contact {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 100px;
+	height: 100px;
+}
