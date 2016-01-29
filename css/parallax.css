@@ -1,11 +1,39 @@
+@font-face {
+	font-family: AvenirBlack;
+	src: url("../fonts/AvenirLTStd-Black.otf") format("opentype");
+}
+
+@font-face {
+	font-family: AvenirBook;
+	src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
+}
+
+@font-face {
+	font-family: AvenirLight;
+	src: url("../fonts/AvenirLTStd-Light.otf") format("opentype");
+}
+
 /* body element with background setup for parallax scrolling */
 body { 
     background-image: url('../img/background.jpg');
+    background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center 0px; 
-    height: 2000px;
+    background-position: center 0px;
     background-color: #F26D20;
+    font-family: AvenirBlack;
+}
+
+@media (min-width: 320px) {
+   body { font-size: 12px; }
+}
+
+@media (min-width: 640px) {
+   body { font-size: 16px; }
+}
+
+.fracture {
+	color: #F26D20;
 }
 
 /* the white full-width text boxes (also used for header/footer) */
@@ -75,13 +103,16 @@ body {
 /* fracture team text section */
 #fracture-team {
 	text-align: center;
-	font-size: 25px;
 }
 
 /* arcane galaxies section */
 
 #arcane-galaxies {
-	height: 525px;
+	height: 425px;
+}
+
+#arcane-galaxies div {
+	height: 400px;
 }
 
 #arcane-galaxies img {
@@ -90,27 +121,35 @@ body {
 }
 
 #spaceship {
+	width: 60%;
 	max-width: 500px;
-	min-width: 250px;
 	top: 0px;
 	right: 0px;
 }
 
 #silhouettes {
-	height: 250px;
-	top: 250px;
+	width: 40%;
+	max-width: 400px;
+	bottom: 0px;
 	left: 0px;
 }
 
 #agblurb {
-	height: 200px;
-	top: 50px;
-	left: 150px;
+	display: block;
+	position: absolute;
+	text-align: center;
+	width: 40%;
+	top: 10%;
+	left: 10%;
+	color: #ffffff;
+	text-shadow: 2px 2px #0f0f0f;
 }
 
 /* footer */
 #footer {
 	height: 125px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 #footer #contact {

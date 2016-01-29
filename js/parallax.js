@@ -7,7 +7,7 @@ window.requestAnimationFrame = window.requestAnimationFrame
  
 function parallaxScroll(){
 	var yoff = window.pageYOffset // get number of pixels document has scrolled vertically
-	var parallaxY = "center " + (-yoff * .1) + "px";
+	var parallaxY = "center " + (-yoff * .3) + "px";
 	$("body").css("background-position", parallaxY);
 }
  
