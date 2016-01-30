@@ -1,0 +1,147 @@
+@font-face {
+	font-family: AvenirBlack;
+	src: url("../fonts/AvenirLTStd-Black.otf") format("opentype");
+}
+
+@font-face {
+	font-family: AvenirBook;
+	src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
+}
+
+@font-face {
+	font-family: AvenirLight;
+	src: url("../fonts/AvenirLTStd-Light.otf") format("opentype");
+}
+
+/* body element with background setup for parallax scrolling */
+body { 
+    background-image: url('../img/background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 0px;
+    background-color: #F26D20;
+    font-family: AvenirBlack;
+}
+
+@media (min-width: 320px) {
+   body { font-size: 12px; }
+}
+
+@media (min-width: 640px) {
+   body { font-size: 16px; }
+}
+
+.fracture {
+	color: #F26D20;
+}
+
+/* the white full-width text boxes (also used for header/footer) */
+.whitebox-row {
+	background-color: #fff;
+}
+
+.whitebox-col {
+	background-color: #fff;
+	width: 100%;
+}
+
+/* some bootstrap extras */
+.row.top-padding {
+	padding-top: 25px;
+}
+.row.bottom-padding {
+	padding-bottom: 25px;
+}
+.row.both-padding {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+/* end bootstrap extras */
+
+.center-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* header */
+#header .img-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+#header img {
+	width: 100%;
+}
+
+/* warriors section */
+#warriors-logo img {
+	width: 50%;
+}
+
+#app-store-logos img {
+	width: 100%;
+}
+
+#best-of-2014 img {
+	width: 30%;
+}
+
+#editors-choice img {
+	width: 30%;
+}
+
+/* fracture team text section */
+#fracture-team {
+	text-align: center;
+}
+
+/* arcane galaxies section */
+
+#arcane-galaxies {
+	height: 100vw;
+}
+
+#arcane-galaxies img {
+	display: block;
+	position: absolute;
+}
+
+#spaceship {
+	width: 50%;
+	top: 30%;
+	right: 5%;
+}
+
+#silhouettes {
+	width: 30%;
+	bottom: 0px;
+	left: 10%;
+}
+
+#agblurb {
+	width: 60%;
+	top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+/* footer */
+#footer {
+	height: 125px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+#footer #contact {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 100px;
+	height: 100px;
+}
