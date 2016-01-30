@@ -27,6 +27,7 @@ body {
 /* no parallax over 1200px for performance reasons */
 @media (min-width: 1200px) {
 	body {
+		background-size: 100% 90%;
 		background-attachment: scroll;
 	}
 }
