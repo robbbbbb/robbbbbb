@@ -16,12 +16,19 @@
 /* body element with background setup for parallax scrolling */
 body { 
     background-image: url('../img/background.jpg');
-    background-size: 100%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center 0px;
+    background-position: center 150px;
     background-color: #F26D20;
     font-family: AvenirBlack;
+}
+
+/* no parallax over 1200px for performance reasons */
+@media (min-width: 1200px) {
+	body {
+		background-attachment: scroll;
+	}
 }
 
 @media (min-width: 320px) {
@@ -65,44 +72,47 @@ body {
 	margin-right: auto;
 }
 
-/* header */
-#header .img-container {
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	margin-bottom: 50px;
-}
 
+
+
+/* header */
 #header img {
 	width: 100%;
+	max-width: 768px;
 }
+
+
+
+
 
 /* warriors section */
 #warriors-logo img {
 	width: 50%;
+	max-width: 500px;
 }
 
 #app-store-logos img {
 	width: 100%;
+	max-width: 300px;
 }
 
 #best-of-2014 img {
 	width: 30%;
+	max-width: 400px;
 }
 
 #editors-choice img {
 	width: 30%;
+	max-width: 400px;
 }
 
-/* fracture team text section */
-#fracture-team {
-	text-align: center;
-}
+
+
 
 /* arcane galaxies section */
-
 #arcane-galaxies {
 	height: 100vw;
+	width: 100%;
 }
 
 #arcane-galaxies img {
@@ -110,38 +120,94 @@ body {
 	position: absolute;
 }
 
-#spaceship {
-	width: 50%;
-	top: 30%;
-	right: 5%;
+/* desktop (clamps images to pixel sizes) */
+@media (min-width: 1200px) {
+	#arcane-galaxies {
+		padding-right: 10%;
+		padding-left: 10%;
+		max-height: 85vh;
+	}
+
+	#agblurb {
+		max-width: 600px;
+		top: 5%;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+
+	#spaceship {
+		max-width: 600px;
+		top: 15%;
+		margin-left: 50%;
+		z-index: 2;
+	}
+
+	#silhouettes {
+		max-width: 400px;
+		bottom: 0px;
+		margin-left: 10%;
+	}	
 }
 
-#silhouettes {
-	width: 30%;
-	bottom: 0px;
-	left: 10%;
+/* phone (uses screen ratio) */
+@media (max-width: 1199px) {
+	#agblurb {
+		width: 60%;
+		max-width: 600px;
+		top: 5%;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+
+	#spaceship {
+		width: 50%;
+		top: 35%;
+		right: 5%;
+		z-index: 2;
+	}
+
+	#silhouettes {
+		width: 30%;
+		bottom: 0px;
+		left: 10%;
+	}
 }
 
-#agblurb {
-	width: 60%;
-	top: 5%;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 /* footer */
 #footer {
-	height: 125px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	width: 100%;
 }
 
 #footer #contact {
 	display: block;
-	position: absolute;
-	top: 0px;
-	right: 100px;
-	height: 100px;
+	width: 100%;
+	max-width: 800px;
+	left: 0px;
+	right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+
 }
