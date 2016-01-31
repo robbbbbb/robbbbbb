@@ -19,7 +19,7 @@ body {
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center 100px;
+    background-position: center 50px;
     background-color: #fff;
     font-family: AvenirBlack;
 }
@@ -76,11 +76,21 @@ body {
 
 
 
+
+
+
+
+
 /* header */
 #header img {
 	width: 100%;
 	max-width: 768px;
 }
+
+
+
+
+
 
 
 
@@ -106,6 +116,13 @@ body {
 	width: 30%;
 	max-width: 400px;
 }
+
+
+
+
+
+
+
 
 
 
@@ -141,15 +158,15 @@ body {
 
 	#spaceship {
 		max-width: 600px;
-		top: 15%;
-		margin-left: 50%;
+		top: 30%;
+		margin-left: 40%;
 		z-index: 2;
 	}
 
 	#silhouettes {
-		max-width: 400px;
+		max-width: 600px;
 		bottom: 0px;
-		margin-left: 10%;
+		margin-left: 25%;
 	}	
 }
 
@@ -169,12 +186,12 @@ body {
 	#spaceship {
 		width: 50%;
 		top: 35%;
-		right: 5%;
+		right: 10%;
 		z-index: 2;
 	}
 
 	#silhouettes {
-		width: 30%;
+		width: 40%;
 		bottom: 0px;
 		left: 10%;
 	}
