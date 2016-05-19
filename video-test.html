@@ -12,7 +12,7 @@
       <script type="text/javascript">
         var videoIdx = 1;
         $( document ).ready(function() {
-          $('#bg-video').click(function() { 
+          $('#video-overlay').click(function() { 
             console.log("click");
             videoIdx = (videoIdx + 1) % 7;
             $('#video-src').attr("src", "./video/" + (videoIdx + 1) + ".mp4");
