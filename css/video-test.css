@@ -154,7 +154,7 @@ body {
 /* desktop (clamps images to pixel sizes) */
 @media (min-width: 1200px) {
 	#fracture-logo {
-		max-width: 600px;
+		max-width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
 		left: 0;
