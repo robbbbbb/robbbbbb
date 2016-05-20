@@ -10,25 +10,30 @@
       
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
       <script type="text/javascript">
-        var videoIdx = 1;
-        $( document ).ready(function() {
-          $('#video-overlay').click(function() { 
-            console.log("click");
-            videoIdx = (videoIdx + 1) % 7;
-            $('#video-src').attr("src", "./video/" + (videoIdx + 1) + ".mp4");
-            $('#bg-video')[0].load();
-          });
+        $(document).ready(function() {
+          $("#content").css("top", ($(window).height() * 0.95) + "px");
         });
-
       </script>
   </head>
   <body>
 
+    <div id="header" class="container-fluid fullwidth">
+      <div id="black-header" class="row fullwidth">
+        <div class="col-xs-12">
+          <span class="mailto" style="color: #fff;"><a href="mailto:info@fracturegames.co.uk">CONTACT</a></span>
+        </div>
+      </div>
+      <div class="row rainbow fullwidth"></div>
+    </div>
 
-
-
-
-    <div class="hero__background" aria-hidden="true">
+    <div class="hero__background fullwidth" aria-hidden="true">
+      <div class="container-fluid fullwidth">
+        <div class="row fullwidth">
+          <div class="col-xs-12 fullwidth">
+            <img id="fracture-logo" class="center-img" src="img/Frac_seriously_logo.png" />
+          </div>          
+        </div>
+      </div>    
       <video id="bg-video" autoplay preload="auto" loop="loop" id="pretzel-video" class="video-playing">
         <source id="video-src" src="./video/1.mp4" type="video/mp4">
       </video>
@@ -36,71 +41,42 @@
       </div>
     </div>
 
-
-
-
-
-    <div class="container-fluid">
-      <!-- fracture header whitebox -->
-      <div class="row black-row" id="header">
-        <div class="col-xs-12 black-col">
+    <div id="content" class="container-fluid fullwidth">
+      <div class="row rainbow fullwidth"></div>
+      <div class="row content-row grey-row fullwidth">
+        We are an award winning, experienced, creative technology team
+      </div>
+      <div class="row content-row white-row fullwidth">
+        <span class="bigfont">IN THE PAST WE PLAYED AT</span>
+        <img id="logos" class="center-img" src="img/Frac_webpage_logos.png" />
+      </div>      
+      <div class="row content-row grey-row fullwidth">
+        We are platform-agnostic and have expertise in VR, AR, Mobile, Console and PC
+      </div>
+      <div class="row content-row white-row fullwidth">
+        <div class="row">
+          <span class="bigfont">WE ARE PROUD OF</span>
         </div>
-      </div>
-
-      <div class="row top-padding">
-        <div class="col-xs-12" id="click-target">
-          <img id="fracture-logo" class="center-img" src="img/Frac_seriously_logo.png" />
-        </div>          
-      </div>
-
-<!-- 
-      <div class="row top-padding" id="warriors-logo">
-        <div class="col-xs-12">
-          <a href="http://worldofwarriors.com">
-            <img class="center-img " src="img/warriors.png" />
-          </a>
-        </div>  
-      </div>
-
-      <div class="row both-padding" id="app-store-logos">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-4">
-          <a href="https://itunes.apple.com/gb/app/world-of-warriors/id793076829?mt=8">
-            <img class="center-img" src="img/appstore-apple.png" />
-          </a>
+        <div class="row">
+          <div class="col-md-4"" style="margin-top: 40px;">
+            <span class="hugefont" style="color: #000; font-family: AvenirBlack;">9,000,000</span>
+            <br />
+            <span class="bigfont" style="color: #bfbfbf; font-family: AvenirBlack;">(PLAYERS)</span>
+          </div>
+          <div class="col-md-4">
+            <img class="center-img" src="img/best-of-2014.png" />
+          </div>
+          <div class="col-md-4" style="margin-top: 25px;">
+            <img class="center-img" src="img/editors-choice.png" style="display: inline-block; vertical-align: middle;"/>
+            <br />
+            <br />
+            <span class="bigfont" style="color: #bfbfbf; font-family: AvenirBlack;">(GLOBALLY)</span>
+          </div>        
         </div>
-        <div class="col-xs-4">
-          <a href="https://play.google.com/store/apps/details?id=com.mindcandy.warriors">
-            <img class="center-img" src="img/appstore-google.png" />
-          </a>
-        </div>
-        <div class="col-xs-2"></div>
-      </div>
-      <div class="row bottom-padding" id="best-of-2014">
-        <div class="col-xs-12"><img class="center-img" src="img/best-of-2014.png" /></div>  
-      </div>
-      <div class="row bottom-padding" id="editors-choice">
-        <div class="col-xs-12"><img class="center-img" src="img/editors-choice.png" /></div>  
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12" id="arcane-galaxies">
-          <img id="spaceship" src="img/spaceship.png" />
-          <img id="silhouettes" src="img/silhouettes.png" />
-          <img id="agblurb" src="img/Webpage_bodycopy.png" />
-        </div>
-      </div> -->
-
-
-      <!-- fracture footer whitebox -->
-<!--       <div class="row">
-        <div class="col-xs-12 black-col" id="footer">
-          <a href="mailto:info@fracturegames.co.uk">
-            <img id="contact" src="img/contact-cropped.jpg" />
-          </a>
-        </div>
-      </div> -->
-
+      </div>      
     </div>
+
+
+
   </body>
 </html>

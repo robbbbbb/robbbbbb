@@ -8,64 +8,85 @@
 	src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
 }
 
-@font-face {
-	font-family: AvenirLight;
-	src: url("../fonts/AvenirLTStd-Light.otf") format("opentype");
-}
-
-/* body element with background setup for parallax scrolling */
-body { 
-/*  background-image: url('../img/background.jpg');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center 50px;*/
-    background-color: #fff;
-    font-family: AvenirBlack;
-}
-
-/* no parallax over 1200px for performance reasons */
-@media (min-width: 1200px) {
-	body {
-		background-size: 100% 100%;
-	}
-}
-
-@media (min-width: 320px) {
-   body { font-size: 12px; }
-}
-
-@media (min-width: 640px) {
-   body { font-size: 16px; }
-}
-
-.fracture {
-	color: #F26D20;
-}
-
-/* the white full-width text boxes (also used for header/footer) */
-.black-row {
-	background-color: #000000;
-	height: 100px;
-}
-
-.black-col {
-	background-color: #000000;
-	height: 100px;
+html, body {
+	height: 100%;
 	width: 100%;
 }
 
-/* some bootstrap extras */
-.row.top-padding {
-	padding-top: 25px;
+@media (min-width: 320px) {
+   body { font-size: 16px; }
+   .bigfont { font-size: 24px; }
+   .hugefont { font-size: 32px; }
 }
-.row.bottom-padding {
-	padding-bottom: 25px;
+
+@media (min-width: 640px) {
+   body { font-size: 24px; }
+   .bigfont { font-size: 32px; }
+   .hugefont { font-size: 48px; }
 }
-.row.both-padding {
-	padding-top: 25px;
-	padding-bottom: 25px;
+
+.fullwidth {
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
+
+#header {
+	z-index: 3;
+}
+
+#black-header {
+	background-color: #000000;
+	height: 5vh;
+	text-align: center;
+	color: #fff;
+	font-family: AvenirBlack;
+	padding: 10px;
+}
+
+#black-header a:link { color: #fff; } 
+#black-header a:visited { color: #fff; } 
+#black-header a:hover { color: #fff; } 
+
+
+
+.rainbow {
+	background-image: url("../img/Frac_webpage_gradientstrip.png");
+	background-size: auto;
+	height: 2px;
+	z-index: 3;
+}
+
+#content {
+	position: absolute;
+	/* top offset dictated by javascript */
+}
+
+.content-row {
+	padding: 50px;
+	text-align: center;
+	font-family: AvenirBook;
+	color: #000;	
+}
+
+.grey-row {
+	background-color: #e6e6e6;
+}
+
+.white-row {
+	background-color: #fff;	
+	font-family: AvenirBlack;
+	color: #bfbfbf;
+}
+
+#logos {
+	max-width: 788px;
+	width: 75%;
+}
+
+
 /* end bootstrap extras */
 
 .center-img {
@@ -76,80 +97,7 @@ body {
 
 
 
-/* debug box */
-#debug-box {
-	display: block;
-	position: fixed;
-	left: 10px;
-	top: 10px;
-	background-color: #fff;
-	color: #000;
-	z-index: 5;
-}
 
-
-
-
-
-
-
-
-/* header */
-#header img {
-	width: 100%;
-	max-width: 768px;
-}
-
-
-
-
-
-
-
-
-
-
-/* warriors section */
-#warriors-logo img {
-	width: 50%;
-	max-width: 500px;
-}
-
-#app-store-logos img {
-	width: 100%;
-	max-width: 300px;
-}
-
-#best-of-2014 img {
-	width: 30%;
-	max-width: 400px;
-}
-
-#editors-choice img {
-	width: 30%;
-	max-width: 400px;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* arcane galaxies section */
-#arcane-galaxies {
-	height: 100vw;
-	width: 100%;
-}
-
-#arcane-galaxies img {
-	display: block;
-	position: absolute;
-}
 
 /* desktop (clamps images to pixel sizes) */
 @media (min-width: 1200px) {
@@ -180,10 +128,7 @@ body {
 
 
 
-
-
-
-.hero__background video,#video-overlay {
+.hero__background video {
     top: 0;
     height: 100%;
     position: absolute;
@@ -192,15 +137,19 @@ body {
 
 @media (min-width: 1100px) {
 	.hero__background video {
-	    height: auto;
-	    min-height: 100% !important;
-	    width: 100%;
+	    height: 100%;
+	    width: auto;
+	    min-width: 100%;
+	    position: absolute;
+	 	top: 0px;   
+		margin-left: auto;
+		margin-right: auto;	 	
 	}
 }
 
 video {
     display: inline-block;
-    object-fit: contain;    
+    object-fit: cover;    
     z-index: -2;
 }
 
@@ -213,35 +162,4 @@ video {
 	background-image: url("../img/bg_spot.png");
 	background-repeat: repeat;
 	z-index: -1;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* footer */
-#footer {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 0px;
-	width: 100%;
-}
-
-#footer #contact {
-	display: block;
-	width: 100%;
-	max-width: 800px;
-	left: 0px;
-	right: 0px;
-	margin-left: auto;
-	margin-right: auto;
-
 }
