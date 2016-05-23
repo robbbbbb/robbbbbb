@@ -11,10 +11,20 @@
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <script type="text/javascript">
         $(document).ready(function() {
-          // set top of content div to always be just peeking on to the screen at the bottom
-          var contentTopPx = ($(window).height() * 0.95) + "px";
-          $("#content").css("top", contentTopPx);
-          $(".fill-above-content-div").css("min-height", contentTopPx);
+          
+          if ($(window).width() > 600) {
+            // set top of content div to always be just peeking on to the screen at the bottom
+            var contentTopPx = ($(window).height() * 0.95) + "px";
+            $("#content").css("top", contentTopPx);
+            // then set the background divs (video + overlay) to always fill the vertical space left
+            $(".fill-above-content-div").css("min-height", contentTopPx);            
+          }
+          else {
+            // set the content div to just sit at the bottom of the video replacement div
+            var staticBackgroundBottom = $("#video-replacement img")[0].getBoundingClientRect().bottom;
+            $("#content").css("top", staticBackgroundBottom);
+          }
+
 
           // fade in text as it scrolls on
           window.requestAnimationFrame = window.requestAnimationFrame

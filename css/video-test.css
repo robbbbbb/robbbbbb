@@ -167,8 +167,10 @@ html, body {
 		position: absolute;
 		top: 0px;
 		z-index: -1;
-		height: auto;
+	}
+
+	#video-replacement img {
 		width: 100%;
-		overflow: hidden;
+		height: auto;
 	}
 }
