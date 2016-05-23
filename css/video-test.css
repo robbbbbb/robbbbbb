@@ -12,15 +12,16 @@ html, body {
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
+	white-space: nowrap;
 }
 
-@media (min-width: 320px) {
+@media (max-width: 599px) {
    body { font-size: 16px; }
-   .bigfont { font-size: 24px; }
-   .hugefont { font-size: 32px; }
+   .bigfont { font-size: 5.5vw; }
+   .hugefont { font-size: 10vw; }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 600px) {
    body { font-size: 24px; }
    .bigfont { font-size: 32px; }
    .hugefont { font-size: 48px; }
@@ -56,6 +57,13 @@ html, body {
 	height: 10vh;
 }
 
+@media (max-width: 600px) {
+	.mailto {
+		float: right;
+		margin-right: 10px;
+	}
+}
+
 #black-header { line-height: 75px; }
 #black-header a:link { color: #fff; text-decoration: none; } 
 #black-header a:visited { color: #fff; text-decoration: none; } 
@@ -88,6 +96,16 @@ html, body {
 	background-color: #fff;	
 	font-family: AvenirBlack;
 	color: #bfbfbf;
+}
+
+.content-text {
+	font-size: 24px;
+}
+
+@media (max-width: 600px) {
+	.content-text {
+		font-size: 4vw;
+	}
 }
 
 #logos {
@@ -148,9 +166,9 @@ html, body {
 		display: inline-block;
 		position: absolute;
 		top: 0px;
-		object-fit: cover;
 		z-index: -1;
 		height: auto;
 		width: 100%;
+		overflow: hidden;
 	}
 }
