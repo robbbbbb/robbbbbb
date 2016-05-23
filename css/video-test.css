@@ -55,8 +55,12 @@ html, body {
 	}
 
 	#mountain img {
-		width: 15vw;
+		width: 11vw;
 	}	
+
+	.mailto {
+		font-size: 3vw;
+	}
 }
 
 @media (min-width: 600px) { /* desktop */
