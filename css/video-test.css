@@ -36,12 +36,12 @@ html, body {
 	overflow-x: hidden;
 }
 
-#header {
-	z-index: 3;
+#header, #footer {
+	z-index: 5;
+	background-color: #000000;
 }
 
-#black-header {
-	background-color: #000000;
+#black-header {	
 	text-align: center;
 	color: #fff;
 	font-family: AvenirBlack;
@@ -62,6 +62,15 @@ html, body {
 	.mailto {
 		font-size: 3vw;
 	}
+
+	#footer {
+		margin-top: -50px;
+		line-height: 40px;
+	}
+
+	#footer .mailto {
+		text-align: right;
+	}
 }
 
 @media (min-width: 600px) { /* desktop */
@@ -71,10 +80,9 @@ html, body {
 
 	.mailto {
 		display: inline-block;
-		padding-top: 25px;
 		margin-right: auto;
 		margin-left: auto;
-
+		line-height: 80px;
 	}
 }
 
