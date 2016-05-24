@@ -105,10 +105,16 @@ html, body {
 }
 
 .content-row {
-	padding: 10vw;
+	padding: 3vw;
 	text-align: center;
 	font-family: AvenirBook;
 	color: #000;	
+}
+
+@media (max-width: 500px) {
+	.content-row {
+		padding: 10vw;
+	}
 }
 
 .grey-row {
