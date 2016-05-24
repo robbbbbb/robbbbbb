@@ -33,6 +33,7 @@ html, body {
 	padding-right: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
+	overflow-x: hidden;
 }
 
 #header {
@@ -69,8 +70,11 @@ html, body {
 	}
 
 	.mailto {
-		float: right;
-		padding-top: 15px;
+		display: inline-block;
+		padding-top: 25px;
+		margin-right: auto;
+		margin-left: auto;
+
 	}
 }
 
@@ -178,11 +182,13 @@ html, body {
 		position: absolute;
 		top: 0px;
 		z-index: -1;
+		overflow-x: hidden;
 	}
 
 	#video-replacement img {
 		width: auto;
 		height: 425px;
+		object-fit: cover;
 	}
 
 	#content {

@@ -3,7 +3,7 @@
   <head>
       <title>Fracture</title>
       
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
       <link rel="stylesheet" type="text/css" href="css/video-test.css" />            
@@ -12,21 +12,25 @@
       <script type="text/javascript">
         $(document).ready(function() {
           
+          //------------------------------------------------------------------------------------------------//
+          // (desktop only) set top of content div to always be just peeking on to the screen at the bottom
           if ($(window).width() > 600) {
-            // set top of content div to always be just peeking on to the screen at the bottom
             var contentTopPx = ($(window).height() * 0.95) + "px";
             $("#content").css("top", contentTopPx);
             // then set the background divs (video + overlay) to always fill the vertical space left
             $(".fill-above-content-div").css("min-height", contentTopPx);            
           }
 
-          // fade in text as it scrolls on
+          //------------------------------------------------------------------------------------------------//
+          // create rendering-friendly approach to 'onscroll' type events          
           window.requestAnimationFrame = window.requestAnimationFrame
            || window.mozRequestAnimationFrame
            || window.webkitRequestAnimationFrame
            || window.msRequestAnimationFrame
            || function(f){setTimeout(f, 1000/60)}
-           
+
+          //------------------------------------------------------------------------------------------------//
+          // fade in text as it scrolls on           
           function scrollFade(){
             function invLerp(a, b, value) { return (value - a) / (b - a); }
             var viewportHeight = $(window).height();
@@ -38,10 +42,8 @@
               $(this).css("opacity", opacity);
             });
           }
-           
-          window.addEventListener('scroll', function(){ // on page scroll
-            requestAnimationFrame(scrollFade)
-          }, false);
+          window.addEventListener('scroll', function() { requestAnimationFrame(scrollFade); }, false);
+
         });
       </script>
   </head>
@@ -76,7 +78,7 @@
       </video>
       <div id="video-overlay" class="fill-above-content-div">
       </div>
-      <div id="video-replacement">
+      <div id="video-replacement" class="fullwidth">
         <img src="img/Webpage_static_background.png" />
       </div>
     </div>
@@ -115,8 +117,8 @@
         </div>
         <div id="black-header" class="row fullwidth">
           <div class="col-xs-12">
-            <div>
-             <span class="mailto bigfont"><a href="mailto:info@fracturegames.co.uk">CONTACT</a></span>
+            <div class="mailto">
+             <span><a href="mailto:info@fracturegames.co.uk">CONTACT</a></span>
             </div>      
           </div>
         </div>
