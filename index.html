@@ -3,84 +3,127 @@
   <head>
       <title>Fracture</title>
       
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="css/parallax-static.css" />      
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="css/video-test.css" />            
       
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-      <script type="text/javascript" src="js/parallax-cb1.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-73206032-1', 'auto');
-        ga('send', 'pageview');
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          
+          //------------------------------------------------------------------------------------------------//
+          // (desktop only) set top of content div to always be just peeking on to the screen at the bottom
+          if ($(window).width() > 600) {
+            var contentTopPx = ($(window).height() * 0.95) + "px";
+            $("#content").css("top", contentTopPx);
+            // then set the background divs (video + overlay) to always fill the vertical space left
+            $(".fill-above-content-div").css("min-height", contentTopPx);            
+          }
+
+          //------------------------------------------------------------------------------------------------//
+          // create rendering-friendly approach to 'onscroll' type events          
+          window.requestAnimationFrame = window.requestAnimationFrame
+           || window.mozRequestAnimationFrame
+           || window.webkitRequestAnimationFrame
+           || window.msRequestAnimationFrame
+           || function(f){setTimeout(f, 1000/60)}
+
+          //------------------------------------------------------------------------------------------------//
+          // fade in text as it scrolls on           
+          function scrollFade(){
+            function invLerp(a, b, value) { return (value - a) / (b - a); }
+            var viewportHeight = $(window).height();
+            var fullyFadedInPosition = 0.23; // 20% up the screen be fully faded in
+            $(".fade-in").each(function(elem) {
+              var divPosPx = this.getBoundingClientRect().top
+              var divPosRelativeFromBottom = 1 - (divPosPx / viewportHeight);
+              var opacity = invLerp(0, fullyFadedInPosition, divPosRelativeFromBottom);
+              $(this).css("opacity", opacity);
+            });
+          }
+          window.addEventListener('scroll', function() { requestAnimationFrame(scrollFade); }, false);
+
+        });
       </script>
   </head>
   <body>
 
-    <div class="container-fluid">
-      <!-- fracture header whitebox -->
-      <div class="row whitebox-row" id="header">
-        <div class="col-xs-12 whitebox-col">
-          <a href="mailto:info@fracturegames.co.uk">
-            <img class="center-img" src="img/fracture-logo-white.jpg" />
-          </a>
-        </div>
-      </div>
-
-      <!-- warriors section -->
-      <div class="row top-padding" id="warriors-logo">
+    <div id="header" class="container-fluid fullwidth">
+      <div id="black-header" class="row fullwidth">
         <div class="col-xs-12">
-          <a href="http://worldofwarriors.com">
-            <img class="center-img " src="img/warriors.png" />
-          </a>
-        </div>  
-      </div>
-
-      <div class="row both-padding" id="app-store-logos">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-4">
-          <a href="https://itunes.apple.com/gb/app/world-of-warriors/id793076829?mt=8">
-            <img class="center-img" src="img/appstore-apple.png" />
-          </a>
-        </div>
-        <div class="col-xs-4">
-          <a href="https://play.google.com/store/apps/details?id=com.mindcandy.warriors">
-            <img class="center-img" src="img/appstore-google.png" />
-          </a>
-        </div>
-        <div class="col-xs-2"></div>
-      </div>
-      <div class="row bottom-padding" id="best-of-2014">
-        <div class="col-xs-12"><img class="center-img" src="img/best-of-2014.png" /></div>  
-      </div>
-      <div class="row bottom-padding" id="editors-choice">
-        <div class="col-xs-12"><img class="center-img" src="img/editors-choice.png" /></div>  
-      </div>
-
-      <!-- arcane galaxies section -->
-      <div class="row">
-        <div class="col-xs-12" id="arcane-galaxies">
-          <img id="spaceship" src="img/spaceship.png" />
-          <img id="silhouettes" src="img/silhouettes.png" />
-          <img id="agblurb" src="img/Webpage_bodycopy.png" />
+          <div id="header-flex">
+            <div id="mountain">
+              <img src="img/mountain.png" />  
+            </div>          
+            <div class="mailto">
+             <span><a href="mailto:info@fracturegames.co.uk">CONTACT</a></span>
+            </div>      
+          </div>
         </div>
       </div>
-
-
-      <!-- fracture footer whitebox -->
-      <div class="row">
-        <div class="col-xs-12 whitebox-col" id="footer">
-          <a href="mailto:info@fracturegames.co.uk">
-            <img id="contact" src="img/contact-cropped.jpg" />
-          </a>
-        </div>
-      </div>
-
+      <div class="row rainbow fullwidth"></div>
     </div>
+
+    <div class="hero__background fullwidth" aria-hidden="true">
+      <div class="container-fluid fullwidth">
+        <div class="row fullwidth">
+          <div class="col-xs-12 fullwidth">
+            <img id="fracture-logo" class="center-img" src="img/Frac_seriously_logo.png" />
+          </div>          
+        </div>
+      </div>
+      <video id="bg-video" autoplay preload="auto" loop="loop" id="pretzel-video" class="fill-above-content-div">
+        <source id="video-src" src="./video/1.mp4" type="video/mp4">
+      </video>
+      <div id="video-overlay" class="fill-above-content-div">
+      </div>
+      <div id="video-replacement" class="fullwidth">
+        <img src="img/Webpage_static_background.png" />
+      </div>
+    </div>
+
+    <div id="content" class="container-fluid fullwidth">
+      <div class="row rainbow fullwidth"></div>
+      <div class="row content-row grey-row fullwidth">
+        <span class="fade-in content-text">We are an award winning, experienced,<br />creative technology team.</span>
+      </div>
+      <div class="row content-row white-row fullwidth">
+        <div class="row fade-in">
+          <span class="bigfont">LAST 18 MONTHS</span>
+        </div>
+        <br />
+        <div class="row fade-in">
+          <div class="col-md-4">
+            <img class="center-img" src="img/Frac_webpage_players.png" />
+          </div>
+          <div class="col-md-4">
+            <img class="center-img" src="img/best-of-2014.png" />
+          </div>
+          <div class="col-md-4">
+            <img class="center-img" src="img/Frac_webpage_editors.png" />
+          </div>        
+        </div>
+      </div>              
+      <div class="row content-row grey-row fullwidth">
+        <span class="fade-in content-text">We are platform-agnostic and have expertise<br />in VR, AR, Mobile, Console and PC</span>
+      </div>
+      <div class="row content-row white-row fullwidth">
+        <span class="bigfont fade-in">LAST 5 YEARS</span>
+        <img id="logos" class="center-img fade-in" src="img/Frac_webpage_logos.png" />
+      </div>   
+      <div id="footer" class="container-fluid fullwidth">
+        <div class="row rainbow fullwidth">
+        </div>
+        <div id="black-header" class="row fullwidth">
+          <div class="col-xs-12">
+            <div class="mailto">
+             <span><a href="mailto:info@fracturegames.co.uk">CONTACT</a></span>
+            </div>      
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
