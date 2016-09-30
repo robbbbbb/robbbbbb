@@ -75,6 +75,8 @@ html, body {
 @media (min-width: 500px) { /* desktop */
 	#mountain {
 		float: left;
+		display: block;
+		position: absolute;
 	}
 
 	.mailto {
